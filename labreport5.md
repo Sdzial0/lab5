@@ -28,3 +28,9 @@ For FullScreenPokemon, the number of contributors is 11.  The number of lines of
 For MxM the number of contributors is 5. The number of lines of code is 26543.
 
 For Click it 'n' Ticket the number of contributors is 6 with 1138 lines of code.
+
+##Gource:
+[Soul Engine](https://www.youtube.com/watch?v=MTaUoxJ2nKM&feature=youtu.be)
+[Mergeable](https://www.youtube.com/watch?v=JYFrC-n6iOw&feature=youtu.be)
+[MxM](https://www.youtube.com/watch?v=B8sIClV9ZSg&feature=youtu.be)
+[Click it 'n' Ticket](https://youtu.be/RiAKP7feRrc)
