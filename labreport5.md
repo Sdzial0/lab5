@@ -25,4 +25,6 @@ For Mergeable, the number of contributors is 3. The number of lines of code is 1
 
 For FullScreenPokemon, the number of contributors is 11.  The number of lines of code are 41850, with 415556 added, and 373706 removed.
 
+For MxM the number of contributors is 5. The number of lines of code is 26543.
 
+For Click it 'n' Ticket the number of contributors is 6 with 1138 lines of code.
