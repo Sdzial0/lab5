@@ -19,4 +19,10 @@ $
 | [MxM](https://github.com/musicexmachina/mxm)|4|26611|Sept. 1 2016|22 Feb 2017|4|
 | [Click it 'n' Ticket](https://github.com/infinitymin3r/clickitnticket)|3|1140|Sept. 13 2016|Feb. 6 2017|8|
 
+For Soul Engine, the number of contributors is 5. The number of lines of code is 11827.
+
+For Mergeable, the number of contributors is 3. The number of lines of code is 1209.
+
 For FullScreenPokemon, the number of contributors is 11.  The number of lines of code are 41850, with 415556 added, and 373706 removed.
+
+
