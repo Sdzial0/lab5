@@ -61,12 +61,12 @@ for line in fileinput.input():
     line = convertH2(line)
     line = convertH1(line)
     if printBQStart:
-      print"<blockquote>\n"
+      print"<blockquote>"
       printBQStart = False
     print "<p>" + line + "</p>"
     if printBQEnd:
       print"\n</blockquote>"
       printBQEnd = False
-  
- if inBlock:
-  print "\n</blockquote>"
+
+    if inBlock:
+      print "</blockquote>"
