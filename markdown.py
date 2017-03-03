@@ -42,29 +42,28 @@ printBQEnd = False
 
 for line in fileinput.input():
     line = line.rstrip()
+    if inBlock:
+      if ">" in line:
+        inBlock = True
+      else:
+        inBlock = False
+        printBQEnd = True
 
-if inBlock:
-  if ">" in line:
-    inBlock = True
-  else:
-    inBlock = False
-    printBQEnd = True
+    if not inBlock and ">" in line:
+      inBlock = True
+      printBQStart = True
 
-if not inBlock and ">" in line:
-  inBlock = True
-  printBQStart = True
+    line = line.lstrip(">")
 
-line = line.lstrip(">")
-
-line = convertStrong(line)
-line = convertEm(line)
-line = convertH3(line)
-line = convertH2(line)
-line = convertH1(line)
-if printBQStart:
-  print"<blockquote>"
-  printBQStart = False
-print "<p>" + line + "</p>"
-if printBQEnd:
-  print"</blockquote>"
-  printBQEnd = False
+    line = convertStrong(line)
+    line = convertEm(line)
+    line = convertH3(line)
+    line = convertH2(line)
+    line = convertH1(line)
+    if printBQStart:
+      print"<blockquote>"
+      printBQStart = False
+    print "<p>" + line + "</p>"
+    if printBQEnd:
+      print"</blockquote>"
+      printBQEnd = False
