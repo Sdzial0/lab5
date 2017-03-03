@@ -1,4 +1,7 @@
 #Lab 5
+##Wiki page:
+[Link](https://github.com/Sdzial0/lab5/wiki)
+
 ##Tex:
 ```
 $\sqrt{1+2\sqrt{1+3\sqrt{1+4\sqrt{1+...}}}}$
