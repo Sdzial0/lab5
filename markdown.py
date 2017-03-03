@@ -36,36 +36,35 @@ def convertH3(line):
   line = re.sub(r'_(.*)_', r'<h3>\1</h3>', line)
   return line
 
-if __name__ == '__main__':
-  inBlock = False
-  printBQStart = False
-  printBQEnd = False
-  
-  for line in fileinput.input():
-    line = line.rstrip()
-    
-    if inBlock:
-      if ">" in line:
-        inBlock = True
-      else:
-        inBlock = False
-        printBQEnd = True
+inBlock = False
+printBQStart = False
+printBQEnd = False
 
-    if not inBlock and ">" in line:
-      inBlock = True
-      printBQStart = True
-      
-    line = line.lstrip(">")
-    
-    line = convertStrong(line)
-    line = convertEm(line)
-    line = convertH3(line)
-    line = convertH2(line)
-    line = convertH1(line)
-    if printBQStart:
-      print"<blockquote>"
-      printBQStart = False
-    print "<p>" + line + "</p>"
-    if printBQEnd:
-      print"</blockquote>"
-      printBQEnd = False
+for line in fileinput.input():
+    line = line.rstrip()
+
+if inBlock:
+  if ">" in line:
+    inBlock = True
+  else:
+    inBlock = False
+    printBQEnd = True
+
+if not inBlock and ">" in line:
+  inBlock = True
+  printBQStart = True
+
+line = line.lstrip(">")
+
+line = convertStrong(line)
+line = convertEm(line)
+line = convertH3(line)
+line = convertH2(line)
+line = convertH1(line)
+if printBQStart:
+  print"<blockquote>"
+  printBQStart = False
+print "<p>" + line + "</p>"
+if printBQEnd:
+  print"</blockquote>"
+  printBQEnd = False
