@@ -45,3 +45,5 @@ For Click it 'n' Ticket the number of contributors is 6 with 1138 lines of code.
 
 #Testing:
 [Markdown.py](https://github.com/Sdzial0/lab5/blob/master/markdown.py)
+[Test_Markdown.py](https://github.com/Sdzial0/lab5/blob/master/test_markdown_unittest.py)
+[TestPass](https://raw.githubusercontent.com/Sdzial0/lab5/master/UnitTests.png)
