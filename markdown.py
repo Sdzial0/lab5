@@ -11,8 +11,6 @@
 import fileinput
 import re
 
-inBlock = False
-
 def convertStrong(line):
   line = re.sub(r'\*\*(.*)\*\*', r'<strong>\1</strong>', line)
   line = re.sub(r'__(.*)__', r'<strong>\1</strong>', line)
@@ -38,26 +36,36 @@ def convertH3(line):
   line = re.sub(r'_(.*)_', r'<h3>\1</h3>', line)
   return line
 
-def convertBlockQuote(line):
-  global inBlock
-  if inBlock==False:
-    if '>' in line:
-      line = line.replace('>','<blockquote>')
-      inBlock = True
-  if inBlock:
-    if '>' in line:
-      line = re.sub(r'\>(.*)', r'\1</blockquote>', line)
-      inBlock = False
-  return line
-
 if __name__ == '__main__':
+  inBlock = False
+  printBQStart = False
+  printBQEnd = False
   
   for line in fileinput.input():
     line = line.rstrip()
+    
+    if inBlock:
+      if ">" in line:
+        inBlock = True
+      else:
+        inBlock = False
+        printBQEnd = True
+
+    if not inBlock and ">" in line:
+      inBlock = True
+      printBQStart = True
+      
+    line = line.lstrip(">")
+    
     line = convertStrong(line)
     line = convertEm(line)
     line = convertH3(line)
     line = convertH2(line)
     line = convertH1(line)
-    line = convertBlockQuote(line)
-    print '<p>' + line + '</p>',
+    if printBQStart:
+      print"<blockquote>"
+      printBQStart = False
+    print "<p>" + line + "</p>"
+    if printBQEnd:
+      print"</blockquote>"
+      printBQEnd = False
